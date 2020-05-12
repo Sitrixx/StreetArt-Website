@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300i,400,400i,700i&display=swap');
+
+html, body{
+    margin: 0;padding: 0;
+    font-family: 'Lato';
+    background: url("https://s1.1zoom.me/b5050/347/361810-admin_1920x1080.jpg");
+}
+
+.inner{
+    width: 80%;
+    margin: auto;
+}
+
+
+.button{
+    text-decoration: none;
+    font-family: 'Lato';
+    font-size: 28px;
+    color: white;
+    position: relative;
+    top: 790px;
+    left: 1400px;
+    background: black;
+}
+
+.button:hover{
+    text-decoration: underline;
+}

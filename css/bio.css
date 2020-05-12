@@ -1,0 +1,50 @@
+.bio{
+    padding-top: 10px;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    position: relative;
+    z-index: 999;
+}
+
+.banksy_title{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+.banksy{
+    position: relative;
+    left: 200px;
+}
+
+.banksy2{
+    position: absolute;
+    left: 720px;
+}
+
+.banksy3{
+    position: absolute;
+    left: 1200px;
+}
+
+.para_banksy{
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+}
+.jef_title{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+.jef1{
+    position: relative;
+    left: 150px;
+}
+
+.jef2{
+    position: absolute;
+    left: 1200px;
+}

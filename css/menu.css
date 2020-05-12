@@ -1,0 +1,163 @@
+.new_oeuvres{
+    position: absolute;
+    top: 145px;
+    left: 230px;
+}
+
+.e-art{
+    position: absolute;
+    top: 145px;
+    left: 900px;
+}
+
+.s-art{
+    position: absolute;
+    top: 145px;
+    left: 1550px;
+}
+
+.o-title{
+    font-weight: 900;
+    font-size: 35px;
+    color: white;
+    border-bottom: 1px solid white;
+    display: inline;
+    font-family: 'Oswald';
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+}
+
+.e-title{
+    font-weight: 900;
+    font-size: 35px;
+    color: white;
+    border-bottom: 1px solid white;
+    display: inline;
+    font-family: 'Oswald';
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, .5);
+}
+
+.s-title{
+    font-weight: 900;
+    font-size: 35px;
+    color: white;
+    border-bottom: 1px solid white;
+    display: inline;
+    font-family: 'Oswald';
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, .5);
+}
+
+.lineX{
+    transform: rotate(90deg);
+    margin: 0;
+    position: absolute;
+    width: 800px;
+    height: 100%;
+    left: -200px;
+    color: white;
+    top: 50px;
+}
+
+.line1X{
+    transform: rotate(90deg);
+    margin: 0;
+    position: absolute;
+    width: 800px;
+    height: 100%;
+    left: 440px;
+    color: white;
+    top: 50px;
+}
+
+.imgno{
+    position: relative;
+    top: 100px;
+    left: -20px;
+}
+
+.textno{
+    color: white;
+    position: relative;
+    top: 110px;
+    left: -15px;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: justify;
+}
+
+.imgexpo{
+    position: relative;
+    top: 100px;
+    left: 550px;
+}
+
+.textexpo{
+    color: white;
+    position: relative;
+    top: 110px;
+    left: 560px;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: justify;
+}
+
+.imgspot{
+    position: relative;
+    top: 100px;
+    left: -720px;
+}
+
+.textspot{
+    color: white;
+    position: relative;
+    top: 110px;
+    left: -720px;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: justify;
+}
+
+.btn{
+    border-style: solid;
+    color: white;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: -270px;
+    left: -71px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.btn2{
+    border-style: solid;
+    color: white;
+    width: 400px;
+    height: 450px;
+    position: relative;
+    top: -256px;
+    left: -120px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+}
+
+
+.btn3{
+    border-style: solid;
+    color: white;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: 180px;
+    left: 1400px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.link1{
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: -200px;
+    left: 50px;
+    cursor: pointer;
+    /*font-size: 18px;
+    font-weight: bold;
+    font-family: 'Lato';*/
+}

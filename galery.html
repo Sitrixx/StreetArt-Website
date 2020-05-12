@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/galery.css" />
+
+    <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/69db5c619d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="tets/test.js"></script>
+    <script id="editable">
+      var canvas, stage;
+      var drawingCanvas;
+      var oldPt;
+      var oldMidPt;
+      var title;
+      var color;
+      var stroke;
+      var colors;
+      var index;
+      var context;
+
+      function init() {
+        canvas = document.getElementById("myCanvas");
+        index = 0;
+        colors = [
+          "#69ffb4",
+          "#00fa9a",
+          "#72e5be",
+          "#a52a2a",
+          "#ff6960",
+          "#f4a460",
+          "#ffe4b5",
+          "#ffdead",
+          "#fdf5e6",
+          "#e5acd3",
+          "#da98c8",
+          "#e3b1ff",
+          "#ee82ee"
+        ];
+
+        //check to see if we are running in a browser with touch support
+        stage = new createjs.Stage(canvas);
+        stage.autoClear = false;
+        stage.enableDOMEvents(true);
+
+        createjs.Touch.enable(stage);
+        createjs.Ticker.framerate = 24;
+
+        drawingCanvas = new createjs.Shape();
+
+        stage.addEventListener("stagemousedown", handleMouseDown);
+        stage.addEventListener("stagemouseup", handleMouseUp);
+
+        title = new createjs.Text(
+          "Click and Drag to draw",
+          "36px Arial",
+          "#565151"
+        );
+        title.x = 800;
+        title.y = 390;
+        stage.addChild(title);
+
+        stage.addChild(drawingCanvas);
+        stage.update();
+      }
+
+      function handleMouseDown(event) {
+        if (!event.primary) {
+          return;
+        }
+        if (stage.contains(title)) {
+          stage.clear();
+          stage.removeChild(title);
+        }
+        color = colors[index++ % colors.length];
+        stroke = (Math.random() * 30 + 10) | 0;
+        oldPt = new createjs.Point(stage.mouseX, stage.mouseY);
+        oldMidPt = oldPt.clone();
+        stage.addEventListener("stagemousemove", handleMouseMove);
+      }
+
+      function handleMouseMove(event) {
+        if (!event.primary) {
+          return;
+        }
+        var midPt = new createjs.Point(
+          (oldPt.x + stage.mouseX) >> 1,
+          (oldPt.y + stage.mouseY) >> 1
+        );
+
+        drawingCanvas.graphics
+          .clear()
+          .setStrokeStyle(stroke, "round", "round")
+          .beginStroke(color)
+          .moveTo(midPt.x, midPt.y)
+          .curveTo(oldPt.x, oldPt.y, oldMidPt.x, oldMidPt.y);
+
+        oldPt.x = stage.mouseX;
+        oldPt.y = stage.mouseY;
+
+        oldMidPt.x = midPt.x;
+        oldMidPt.y = midPt.y;
+
+        stage.update();
+      }
+      function handleMouseUp(event) {
+        if (!event.primary) {
+          return;
+        }
+        stage.removeEventListener("stagemousemove", handleMouseMove);
+      }
+    </script>
+    <title>StreetStory</title>
+  </head>
+
+  <body onload="init();">
+    <header role="header">
+      <nav class="menu" role="navigation">
+        <div class="inner">
+          <div class="m-left">
+            <a href="index.html" class="logo">StreetStory</a>
+          </div>
+          <div class="m-right">
+            <a href="index.html" class="m-link"
+              ><i class="fas fa-home"></i> Accueil</a
+            >
+            <a href="galery.html" class="m-link"
+              ><i class="far fa-images"></i> Drawer</a
+            >
+            <a href="bio.html" class="m-link"
+              ><i class="fas fa-book"></i> Bio</a
+            >
+          </div>
+          <div class="m-nav-toggle">
+            <span class="m-toggle-icon"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <a href="#" class="button" id="btn-download" download="drawing.png"
+      ><i class="fas fa-download"></i> Download</a
+    >
+    <script class="test">
+      var button = document.getElementById("btn-download");
+      button.addEventListener("click", function(e) {
+        var dataURL = canvas.toDataURL("image/png");
+        button.href = dataURL;
+      });
+    </script>
+    <canvas id="myCanvas" width="1920" height="800"></canvas>
+  </body>
+</html>
